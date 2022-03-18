@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_payments
+    columns: 
+      - name: order_id
+        description: Primary key for orders.
+        tests:
+          - not_null
+      - name: payments_id
+        description: Stripe payment id.
+      - name: created
+        description: Date payment was created.
+      - name: amount
+        description: Payment amount in dollars.
+      - name: status
+        description: "{{ doc('payment_status') }}"
